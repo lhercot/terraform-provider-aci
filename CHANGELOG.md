@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.17.1 (November 06, 2025)
+
+IMPROVEMENTS:
+- Updated aci-go-client to v2.31.1
+- Updated aci-go-client to v2.31.2
+- Added name to aci_l3_ext_subnet legacy resource and update aci-go-client files
+- Add resources and datasources for vmm uplink container (vmmuplinkpcont) and vmm uplink policy (vmmuplinkp)
+
+BUG FIXES:
+- Fix documentation valid values and default when empty string
+- Added json string support to import multiple children objects, instead of using a colon-separated import statement
+
+OTHER:
+- Update release_pr.yml
+- Create sbom.spdx.json
+- Update release_pr.yml
+- Update release_pr.yml
+- Update release_pr.yml
+
+# Terraform Provider ACI - Changelog
+
+All notable changes to this project will be documented in this file.
+
 ## 2.17.0 (July 17, 2025)
 
 This release includes resources and data sources that have been migrated from SDKv2 to the Terraform Provider Framework. Those resources and data sources will continue to accept legacy attributes but deprecation warnings will be displayed. See the [migration guide](https://registry.terraform.io/providers/CiscoDevNet/aci/latest/docs/guides/migration) for more details on the migration and how to upgrade the provider to this release and any subsequent v2.x release that will include migrated resources and data sources.
