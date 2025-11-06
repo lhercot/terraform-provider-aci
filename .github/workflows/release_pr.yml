@@ -66,6 +66,7 @@ jobs:
         with:
           path: ./
           artifact-name: sbom.json
+          output-file: ./sbom.json
 
       # Commit changes to release_pr branch
       - name: Set git config
@@ -85,3 +86,4 @@ jobs:
         if: steps.pr.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.DCNE_AUTO_TOKEN }}
+
