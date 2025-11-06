@@ -69,6 +69,8 @@ jobs:
           output-file: ./sbom.spdx.json
         env:
           SYFT_EXCLUDE: ./.github
+      - name: Pretty Print the SBOM JSON file
+        run: cat sbom.spdx.json | python -m json.tool > sbom.spdx.json
 
       # Commit changes to release_pr branch
       - name: Set git config
@@ -88,5 +90,6 @@ jobs:
         if: steps.pr.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.DCNE_AUTO_TOKEN }}
+
 
 
