@@ -65,8 +65,10 @@ jobs:
       - uses: anchore/sbom-action@v0
         with:
           path: ./
-          artifact-name: sbom.json
-          output-file: ./sbom.json
+          artifact-name: sbom.spdx.json
+          output-file: ./sbom.spdx.json
+        env:
+          SYFT_EXCLUDE: ./.github
 
       # Commit changes to release_pr branch
       - name: Set git config
@@ -86,4 +88,5 @@ jobs:
         if: steps.pr.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.DCNE_AUTO_TOKEN }}
+
 
